@@ -34,22 +34,24 @@ export default function Home() {
           <h3>Jaimes</h3>
           <h3>Verhalen verteller</h3>
         </div>
+          <p>De titel is :</p>
           <input
               className={styles.input}
               type="text"
               name="title"
-              placeholder="Verzin eerst zelf een titel"
+              placeholder="Bijv. De avonturen van Jaimes verhalen verteller"
               value={title}
               onChange={(e)=>setTitle(e.target.value)}
           />
+          <p>Het verhaal gaat over :</p>
           <textarea
             className={styles.textarea}
             name="input"
-            placeholder="Het moet gaan over ... "
+            placeholder="Bijv. Een losgeslagen AI verhalen verteller die plunderend het land doortrekt op zoek naar betekenis. "
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-          <input type="submit" value="Genereer een Verhaal" />
+          <input type="submit" value="Genereer een verhaal" />
         </form>
         {div && <div className={styles.result}>
           {loading && <span>Aan het laden ...</span>}

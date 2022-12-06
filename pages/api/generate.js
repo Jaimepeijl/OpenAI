@@ -11,15 +11,16 @@ export default async function (req, res) {
     prompt: generatePrompt(req.body.input),
     temperature: 0.4,
     max_tokens: 500,
-    top_p: 1,
-    frequency_penalty: 0,
-    presence_penalty: 0,
+    frequency_penalty: 1,
+    presence_penalty: 1,
   });
   res.status(200).json({ result: completion.data.choices[0].text });
 }
 
 function generatePrompt(title, input) {
 
-  return `Schrijf een verhaal met de titel: "${title} over: ${input} in het Nederlands`
+  return `Schrijf een verhaal met de titel: '${title}', over: ${input} in het Nederlands`
 ;
 }
+
+
