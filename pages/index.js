@@ -27,10 +27,11 @@ export default function Home() {
   }
 
   return (
+      <>
       <main className={styles.main}>
         <form onSubmit={onSubmit}>
           <div className={styles.title}>
-          <h3>Jaime's</h3>
+          <h3>Jaimes</h3>
           <h3>Verhalen verteller</h3>
         </div>
           <input
@@ -50,11 +51,12 @@ export default function Home() {
           />
           <input type="submit" value="Genereer een Verhaal" />
         </form>
-            <div className={styles.result}>
-              {loading && <span>Aan het laden ...</span>}
-              <h2>{title}</h2>
-              {result}
-            </div>
+        {div && <div className={styles.result}>
+          {loading && <span>Aan het laden ...</span>}
+          <h2>{title}</h2>
+          {result}
+        </div>}
       </main>
+      </>
   );
 }
